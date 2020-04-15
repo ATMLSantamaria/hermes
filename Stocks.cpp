@@ -4,6 +4,7 @@
 #include <vector>
 #include "Stocks.h"
 #include <sqlite3.h>
+#include "Mis_Funciones.h"
 //AL COMPILAR HACER ESTO g++ prueba.cpp -l sqlite3
 
 
@@ -74,10 +75,22 @@ int main()
         //std::cout << "Introduzca el nombre de la DB que desea acceder y modificar\n";
         //std::cin >> DB_name;
         Cartera mi_cartera;
+        mi_cartera.MostrarCartera();
         
         //CreateDataBase(DB_name);
         //CreateTableinDB(DB_name);
         
         //std::cout << HOLA <<"\n";
+        std::vector<std::string> *list = mi_cartera.ListaCartera();
+        
+        // Si tengo un vector<string> *puntero. Si escribo puntero estoy nombrando a la direccion de memoria 0gjgbdfhfx0 la que sea
+        //Si escribo *puntero accedo a lo que sea que alli esta guardado
+        ImprimirVector(list);
 
+/*
+        for (std::string j : (*list))
+        {
+            std::cout << j << "\n";
+        }
+*/
     }

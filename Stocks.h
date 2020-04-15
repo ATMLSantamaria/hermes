@@ -44,31 +44,39 @@ int CreateDataBaseOriginal()//int argc, char** argv
         return (0);
     }
 
-class Cartera
-    {
-        private:
-        std::vector<std::string> lista_cartera;
-        public:
 
-        Cartera()
-            {
-                
-                bool continuar=true;
-                while(continuar) 
-                {
-                    std::cout << "Introduzca un valor de s cartera\n";
-                    std::string valor_name;
-                    getline(std::cin, valor_name); //CIN NO ADMITE INPUT VACIOS; DE AHI ESTA CONSTRUCCION
-                    this->lista_cartera.push_back(valor_name);
-                    if(valor_name.empty()){continuar=false; this->lista_cartera.pop_back();}
-                }
-            }
-        void MostrarCartera()
-            {
-                for (std::string i : this->lista_cartera)
-                    {
-                        std::cout << i << " ";
-                    }
-            }
+
+
+class Cartera
+{
+private:
+std::vector<std::string> lista_cartera_;
+
+public:
+Cartera()
+    {
         
-    };
+        bool continuar=true;
+        while(continuar) 
+        {
+            std::cout << "Introduzca un valor de s cartera\n";
+            std::string valor_name;
+            getline(std::cin, valor_name); //CIN NO ADMITE INPUT VACIOS; DE AHI ESTA CONSTRUCCION
+            this->lista_cartera_.push_back(valor_name);
+            if(valor_name.empty()){continuar=false; //this->lista_cartera_.pop_back();
+            }
+        }
+    }
+void MostrarCartera()
+    {
+        
+        for (std::string i : this->lista_cartera_)
+            
+            {
+                std::cout << i << " ";
+            }
+        std::cout << "\n";
+    }
+std::vector<std::string>* ListaCartera(){return &lista_cartera_;}
+        
+};
