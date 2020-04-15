@@ -4,7 +4,7 @@
 #include <vector>
 #include "Stocks.h"
 #include <sqlite3.h>
-
+//AL COMPILAR HACER ESTO g++ prueba.cpp -l sqlite3
 
 
 void Stock::Dividendo()
@@ -70,32 +70,14 @@ void CreateTableinDB(std::string &name)
 
 int main()
     {   
-        std::string DB_name;
-        std::cout << "Introduzca el nombre de la DB que desea acceder y modificar\n";
-        std::cin >> DB_name;
-        /*
-        Stock acs ("ACS");
-
-        acs.precio = 16.902;
-        acs.bpa_eps=3.13;
+        //std::string DB_name;
+        //std::cout << "Introduzca el nombre de la DB que desea acceder y modificar\n";
+        //std::cin >> DB_name;
+        Cartera mi_cartera;
         
-        acs.PER();
-        acs.Dividendo();
-        acs.Av_Div();
-        std::cout << "PER de " << acs.name << "= " << acs.per << "\n";
-        for(double i : acs.div_ultimos_años){std::cout << i;}
-        std::cout << "\n";
+        //CreateDataBase(DB_name);
+        //CreateTableinDB(DB_name);
         
-
-        std::cout << "AV Div " << acs.av_div << "\n";
-
-        std::cout << "La rentabilidad por dividendo considerando el dividendo medio de los ultimos años y el precio actual es\n";
-        std::cout << "Rentabilidad por dividendo = " << acs.div_yield <<"\n";
-        assert(acs.per == 5.40);
-        */
-        CreateDataBase(DB_name);
-        CreateTableinDB(DB_name);
-        std::string HOLA("hola");
         //std::cout << HOLA <<"\n";
 
     }
