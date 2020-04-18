@@ -1,0 +1,42 @@
+METODOS
+STRINGS
+:s/sumador/sm/g -> encontrar y reemplazar en todo el texto
+#con bin
+var.lstrip() ->elimina espacios del principio
+var.rstrip() ->elimina espacios del final
+var.strip() ->elimina espacios del principio y final
+Prefixes
+fine="Hola que tal"
+fine.startswith("Hola") ->Devuelve true o falsa
+
+fine.endswith("tal")->Devuelve true o false
+
+line=a.martinezl@alumnos.upm
+arrobaposicion=line.find("@")
+puntoposicion=line.find(".")
+host=data[arrobaposicion+1:puntoposicion)
+
+FILES
+FHAND=OPEN('mbox.txt')
+print(fhand)
+<open file 'metodos.txt', mode 'r' at 0x108efb6f0>
+
+newline Character
+\n
+print("HELLO\nWORLD")
+HELLO
+WORLD
+for i in fhand:
+	blablabla
+Esto recorre el archivo fila a fila
+inp=fhand.read()
+lee todo el archivo y lo coloca en un string
+print () añade un \n, es decir, inicia una nueva linea cada vez que se ejecuta
+Si ademas en el final de una linea del texto hay un \n va a abajar 2 espacios
+Podemos evitar esto si hacemos
+fhand=open("metodos","r")
+for line in fhand:
+	line=line.rstrip() ->elimina el espacio del final o la nueva linea
+	if line.startwith("bla")
+		blabla
+

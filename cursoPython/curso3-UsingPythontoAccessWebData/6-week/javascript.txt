@@ -1,0 +1,13 @@
+JavaScript Object Notation
+
+JavaScript sintaxis en lugar de xml
+
+
+import json
+
+info=json.loads(data)
+Esto es un diccionario
+info["name"]="Chuck" #como diccionario
+info["email"] nos da lo que hay dentro del par email algo, siendo ese algo otro diccionario asi que hacemos
+info["email"]["hide"] para entrar al subdiccionario que hay dentro del diccionario
+

@@ -1,0 +1,16 @@
+METODOS
+STRINGS
+var.lstrip() ->elimina espacios del principio
+var.rstrip() ->elimina espacios del final
+var.strip() ->elimina espacios del principio y final
+Prefixes
+fine="Hola que tal"
+fine.startswith("Hola") ->Devuelve true o falsa
+
+finde.endswith("tal")->Devuelve true o false
+
+line=a.martinezl@alumnos.upm
+arrobaposicion=line.find("@")
+puntoposicion=line.find(".")
+host=data[arrobaposicion+1:puntoposicion)
+
