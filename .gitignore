@@ -1,1 +1,3 @@
 cursoPython/
+*.txt
+*.sqlite
