@@ -4,6 +4,8 @@ import json
 import requests
 import sqlite3
 import threading, time
+from Funciones import Descargar_Dividendos
+
 def Introduce_In_DB(received_data,db_name):
     conn = sqlite3.connect(db_name)
     cur = conn.cursor()
@@ -53,9 +55,10 @@ def Descargar_Datos(serviceurl,version,caracteristica,symbol,tipo,CLAVE):
 
 election = input("elija modo funcional(f) o de prueba(p)")
 if (election=='f'):
-    CLAVE = 
-    serviceurl = 
-    database= 'real_stocks_db.sqlite'
+    #CLAVE = 
+    #serviceurl = 
+    #database= 'real_stocks_db.sqlite'
+    pass
 elif(election=='p'):
     CLAVE = 'Tpk_385aaf6516544f10bbd63f3ff5f87b4b'
     serviceurl = 'https://sandbox.iexapis.com'
@@ -64,9 +67,6 @@ else:
     CLAVE = 'Tpk_385aaf6516544f10bbd63f3ff5f87b4b'
     serviceurl = 'https://sandbox.iexapis.com'
     database= 'prueba_stocks_db.sqlite'
-
-
-
 
 
 version = '/stable'
@@ -88,3 +88,5 @@ for k in list_stocks:
     #print(d['symbol'])
     #print(d)
     d=Introduce_In_DB(d,database)
+    e=Descargar_Dividendos(serviceurl,version,caracteristica,k,tipo,CLAVE)
+
