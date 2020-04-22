@@ -9,9 +9,10 @@ from Funciones import Descargar_Dividendos, Descargar_Datos, Introduce_In_DB, An
 
 election = input("elija modo funcional(f) o de prueba(p)")
 if (election=='f'):
-    #CLAVE = 
-    #serviceurl = 
-    #database= 'real_stocks_db.sqlite'
+    #hacer funcion que lea del fichero mi clave
+    CLAVE = 
+    serviceurl = 
+    database= 'real_stocks_db.sqlite'
     pass
 elif(election=='p'):
     CLAVE = 'Tpk_385aaf6516544f10bbd63f3ff5f87b4b'
@@ -42,9 +43,9 @@ for stock in list_stocks:
 
     #print(stock)
     
-    datos=Descargar_Datos(serviceurl,version,caracteristica,stock,tipo,CLAVE)
-    dividendos_last_years=Descargar_Dividendos(serviceurl,version,caracteristica,stock,tipo,CLAVE)
-    data_about_dividend = Analisis_Dividendos(dividendos_last_years,datos)
+    datos = Descargar_Datos(serviceurl,version,caracteristica,stock,tipo,CLAVE)
+    dividendos_last_years,frecuencia_dividendos = Descargar_Dividendos(serviceurl,version,caracteristica,stock,tipo,CLAVE)
+    data_about_dividend = Analisis_Dividendos(dividendos_last_years,datos,frecuencia_dividendos)
     
     #print(d)
     Introduce_In_DB(datos,data_about_dividend,database)
