@@ -74,14 +74,16 @@ version = '/stable'
 caracteristica= '/stock' #
 #simbol= '/xom'
 tipo = '/quote' # /company
-list_stocks=['/xom','/vod','/upwk','/acs']
+list_interesting_stocks=['/xom','/t','/abbv','/rtx','/emr','/vod']
+list_stocks=list_interesting_stocks
+#['/xom','/vod','/upwk','/acs']
 connn = sqlite3.connect(database)
 curr = connn.cursor()
 curr.executescript('''DROP TABLE IF EXISTS STOCKS_TODAY''')
 curr.executescript('''DROP TABLE IF EXISTS STOCKS2''')
 connn.commit()
 
-
+tabla_dividendos=[["5y","4y","3y","2y","1y","name"]]
 for k in list_stocks:
     print(k)
     d=Descargar_Datos(serviceurl,version,caracteristica,k,tipo,CLAVE)
@@ -89,4 +91,9 @@ for k in list_stocks:
     #print(d)
     d=Introduce_In_DB(d,database)
     e=Descargar_Dividendos(serviceurl,version,caracteristica,k,tipo,CLAVE)
+    e.append(k)
+    tabla_dividendos.append(e)
+print("----------------")
+for iii in tabla_dividendos:
+    print(iii)
 
